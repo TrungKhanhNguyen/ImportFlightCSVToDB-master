@@ -1,0 +1,28 @@
+﻿<Window x:Class="ImportFlightCSVToDB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImportFlightCSVToDB"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="192" Width="620" FontSize="13" FontFamily="Segoe UI Symbol" Loaded="Window_Loaded">
+    <Grid Margin="0,0,0,6">
+        <Label Content="Server IP" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="65"/>
+        <TextBox x:Name="txtServerIP" HorizontalAlignment="Left" Height="23" Margin="80,10,0,0" TextWrapping="Wrap" Text="." VerticalAlignment="Top" Width="120"/>
+        <Label Content="User ID" HorizontalAlignment="Left" Margin="214,10,0,0" VerticalAlignment="Top" Width="65"/>
+        <TextBox x:Name="txtUserID"  HorizontalAlignment="Left" Height="23" Margin="279,10,0,0" TextWrapping="Wrap" Text="newuser" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="417,10,0,0" VerticalAlignment="Top" Width="65"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="482,9,0,0" VerticalAlignment="Top" Width="113" Password="123456"/>
+        <Label Content="Thư mục nguồn" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSourceFolder" HorizontalAlignment="Left" Height="23" Margin="119,47,0,0" TextWrapping="Wrap" Text="D:\DataIn" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnSourceFolder" HorizontalAlignment="Left" Margin="257,47,0,0" VerticalAlignment="Top" Content="{materialDesign:PackIcon FolderInformationOutline}" Padding="3" ToolTip="Icon" Width="35" Height="23" Click="btnSourceFolder_Click" />
+        <Label Content="Thư mục đích" HorizontalAlignment="Left" Margin="313,45,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDestinationFolder" HorizontalAlignment="Left" Height="23" Margin="422,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnDestinationFolder" HorizontalAlignment="Left" Margin="560,47,0,0" VerticalAlignment="Top" Content="{materialDesign:PackIcon FolderInformationOutline}" Padding="3" ToolTip="Icon" Width="35" Height="23" Click="btnDestinationFolder_Click" />
+        <Label Content="Bộ đếm (phút)" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCount" HorizontalAlignment="Left" Height="23" Margin="119,92,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnStart" Content="Bắt đầu" HorizontalAlignment="Left" Margin="257,92,0,0" VerticalAlignment="Top" Width="75" Height="23" Padding="2,0,2,0" Click="txtStart_Click"/>
+        <Button x:Name="btnStop" Content="Kết thúc" HorizontalAlignment="Left" Margin="354,92,0,0" VerticalAlignment="Top" Width="71" Height="23" Padding="2,0,2,0" Click="txtStop_Click" IsEnabled="False"/>
+    </Grid>
+</Window>
