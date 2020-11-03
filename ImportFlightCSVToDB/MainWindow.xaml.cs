@@ -1,5 +1,7 @@
 ﻿using ImportFlightCSVToDB.ObjectModel;
 using Microsoft.WindowsAPICodePack.Dialogs;
+using ServiceStack.Redis;
+using ServiceStack.Redis.Generic;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -181,20 +183,27 @@ namespace ImportFlightCSVToDB
 
                         }
                     }
-
-                    if (listPosObject.Count > 0)
+                    using (RedisClient client1 = new RedisClient("localhost", 6379))
                     {
-                        var tempList = listPosObject.OrderByDescending(m => m.DateLog).GroupBy(x => x.ICAO).Select(x => x.First()).ToList();
-                        using (var db = new FlightDetailEntities())
+                        IRedisTypedClient<FlightPos> pos = client1.As<FlightPos>();
+                        pos.FlushAll();
+                        if (listPosObject.Count > 0)
                         {
-                            db.FlightPos.AddRange(tempList);
-                            db.SaveChanges();
-                        }    
+                            var tempList = listPosObject.OrderByDescending(m => m.DateLog).GroupBy(x => x.ICAO).Select(x => x.First()).ToList();
+                            using (var db = new FlightDetailEntities())
+                            {
+                                db.FlightPos.AddRange(tempList);
+                                db.SaveChanges();
+                            }
+                            pos.StoreAll(tempList);
+                        }
+                       
                     }
+                    
+                   
                     if (System.IO.File.Exists(currentItem))
                     {
-                        //var fileName = System.IO.Path.GetFileName(currentItem);
-                        //var desFile = txtDestinationFolder.Text + "\\" + fileName;
+                       
                         try
                         {
                             System.IO.File.Delete(currentItem);
