@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FlightDetailModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="FlightDetailModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="FlightIdentity">
           <Key>
             <PropertyRef Name="Id" />
@@ -12,6 +12,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ICAO" Type="nvarchar" MaxLength="50" />
           <Property Name="Callsign" Type="nvarchar" MaxLength="50" />
+          <Property Name="Squawk" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="FlightPos">
           <Key>
@@ -48,6 +49,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ICAO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Callsign" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Squawk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="FlightPos">
           <Key>
@@ -84,6 +86,7 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ICAO" ColumnName="ICAO" />
                 <ScalarProperty Name="Callsign" ColumnName="Callsign" />
+                <ScalarProperty Name="Squawk" ColumnName="Squawk" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -20,8 +20,8 @@
         <Label Content="Thư mục đích" HorizontalAlignment="Left" Margin="313,45,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtDestinationFolder" HorizontalAlignment="Left" Height="23" Margin="422,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnDestinationFolder" HorizontalAlignment="Left" Margin="560,47,0,0" VerticalAlignment="Top" Content="{materialDesign:PackIcon FolderInformationOutline}" Padding="3" ToolTip="Icon" Width="35" Height="23" Click="btnDestinationFolder_Click" />
-        <Label Content="Bộ đếm (phút)" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCount" HorizontalAlignment="Left" Height="23" Margin="119,92,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Bộ đếm (Giây)" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCount" HorizontalAlignment="Left" Height="23" Margin="119,92,0,0" TextWrapping="Wrap" Text="15" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnStart" Content="Bắt đầu" HorizontalAlignment="Left" Margin="257,92,0,0" VerticalAlignment="Top" Width="75" Height="23" Padding="2,0,2,0" Click="txtStart_Click"/>
         <Button x:Name="btnStop" Content="Kết thúc" HorizontalAlignment="Left" Margin="354,92,0,0" VerticalAlignment="Top" Width="71" Height="23" Padding="2,0,2,0" Click="txtStop_Click" IsEnabled="False"/>
     </Grid>

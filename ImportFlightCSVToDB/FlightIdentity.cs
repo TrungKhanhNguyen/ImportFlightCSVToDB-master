@@ -17,5 +17,6 @@ namespace ImportFlightCSVToDB
         public int Id { get; set; }
         public string ICAO { get; set; }
         public string Callsign { get; set; }
+        public string Squawk { get; set; }
     }
 }
